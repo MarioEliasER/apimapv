@@ -1,0 +1,185 @@
+﻿@page
+@model UbicaTec.Pages.AyudaModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
+	<link href="~/Css/Styles.css" rel="stylesheet" />
+	<title>Ubica-Tec</title>
+</head>
+<body class="grid-container2">
+	<header class="header">
+		<div class="iconTitle">
+			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
+			<h1>Ubica-Tec</h1>
+		</div>
+
+		<div class="menu-toggle">
+			<img class="iconMenu" src="~/Images/Diseños/menu.png" alt="menu icon" />
+		</div>
+
+	</header>
+	<!-- Menú desplegable flotante -->
+	<div class="dropdown-menu" id="dropdownMenu">
+		<ul>
+			<li id="Edificios">
+				<img src="~/Images/Diseños/Edificio.png" alt="Edificios" />
+				Edificios
+			</li>
+			<li id="Salones">
+				<img src="~/Images/Diseños/aula.png" alt="Salones" />
+				Salones
+			</li>
+			<li id="Laboratorios">
+				<img src="~/Images/Diseños/matraz.png" alt="Laboratorios" />
+				Laboratorios
+			</li>
+			<li id="Departamentos">
+				<img src="~/Images/Diseños/Departamento.png" alt="Departamentos" />
+				Departamentos
+			</li>
+			<li id="Areas">
+				<img src="~/Images/Diseños/Areas.png" alt="Áreas Comunes" />
+				Áreas Comunes
+			</li>
+			@* <li id="Salir">
+				<img src="~/Images/Diseños/CerrarSesion.png" alt="Salir" />
+				Salir
+			</li> *@
+		</ul>
+	</div>
+
+	<article class="navbar">
+		<div class="search2">
+			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
+			<input class="searchtext" type="search" placeholder="Buscar..." />
+		</div>
+	</article>
+
+	<main class="main2">
+		<div class="Lista-Container2">
+
+			<h3 class="informacion">¿Qué es Ubica-Tec?</h3>
+			<div class="informacion">
+				<p>Es un mapa escolar que te permite visualizar las diferentes áreas de la escuela, como:</p>
+				<ul class="listaAreas2">
+					<li>Salones de clases</li>
+					<li>Áreas comunes</li>
+					<li>Oficinas administrativas</li>
+					<li>Edificios</li>
+					<li>Departamentos</li>
+				</ul>
+				<img class="imagAyuda" src="~/Images/Diseños/sin-login.png" />
+
+				<ul class="listaAreas">
+					<li>
+						<strong>Buscar áreas específicas:</strong>
+						Utiliza la barra de búsqueda que
+						se encuentra en la parte superior
+						de la pantalla para encontrar
+						rápidamente una ubicación.
+					</li>
+					<li>
+						<strong>Instrucciones:</strong>
+						Escribe el nombre
+						de la ubicación que deseas
+						encontrar y selecciona de la lista
+						de resultados.
+					</li>
+					<li>
+						<strong>Ver en pantalla completa:</strong> el botón de pantalla completa
+						(ubicado en la esquina del mapa)
+						para ampliar el mapa a pantalla
+						completa, lo que facilita la
+						visualización de detalles sin distracciones.
+					</li>
+				</ul>
+				<h4>Funciones Especiales</h4>
+				<ul class="listaAreas">
+					<li>
+						<strong>Función:</strong>Debajo del mapa, se muestra una lista de
+						ubicaciones destacadas. Aquí puedes ver una vista previa rápida de varias ubicaciones importantes con detalles cortos.
+					</li>
+
+					<li>
+						<strong>Instrucciones:</strong> Desliza hacia los lados para ver más ubicaciones destacadas.
+						Haz clic en cualquiera de las tarjetas para obtener más información sobre ese lugar en particular.
+					</li>
+				</ul>
+				<h4>Menu de navegacion inferior</h4>
+				<img class="imagAyuda2" src="~/Images/Diseños/menuInferior.png" />
+				<ul class="listaAreas">
+					<li>
+						<strong>Función:</strong> El menú en la parte inferior de la pantalla te permite cambiar entre las principales
+						funciones de la aplicación:
+					</li>
+					<li><strong>Ruta: </strong>Genera una ruta hacia una ubicación específica dentro del campus.</li>
+					<li><strong>Inicio</strong>Vuelve al mapa principal.</li>
+					<li><strong>Ayuda</strong>Accede a la vista de ayuda y tutoriales sobre cómo usar la aplicación.</li>
+				</ul>
+			</div>
+		</div>
+
+	</main>
+
+	<nav class="footer">
+		<div class="nav-item">
+			<a class="GenerarRutas">
+				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
+				<h3>Ruta</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Inicio">
+				<img src="~/Images/Diseños/casa.png" alt="home icon" />
+				<h3>Inicio</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Ayuda">
+				<img src="~/Images/Diseños/Help.png" alt="help icon" />
+				<h3>Ayuda</h3>
+			</a>
+		</div>
+	</nav>
+	<script>
+		//NAVEGACION
+
+		//ICONO SUPERIOR IZQUIERDO
+		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
+			window.location.replace("/AboutUs");
+		});
+
+		//NAVBAR INFERIOR
+		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+		let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
+			window.location.replace("/GenerarRuta");
+		});
+		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
+			window.location.replace("/Ayuda");
+		});
+		// Mostrar/Ocultar el menú desplegable
+		document.querySelector('.menu-toggle').addEventListener('click', function () {
+			const menu = document.querySelector('#dropdownMenu');
+			menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+		});
+
+		// Cerrar el menú al hacer clic fuera de él
+		document.addEventListener('click', function (event) {
+			const menu = document.querySelector('#dropdownMenu');
+			const toggle = document.querySelector('.menu-toggle');
+
+			if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+				menu.style.display = 'none';
+			}
+		});
+	</script>
+	</body>
+</html>
+

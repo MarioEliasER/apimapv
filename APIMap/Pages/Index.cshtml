@@ -1,0 +1,215 @@
+﻿@page
+@model UbicaTec.Pages.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
+	<link href="~/Css/Styles.css" rel="stylesheet" />
+	<link rel="manifest" href="/manifest.json"
+	<title>Ubica-Tec</title>
+</head>
+<body class="grid-container">
+	<header class="header">
+		<div class="iconTitle">
+			<a class="Icono"><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
+			<h1>Ubica-Tec</h1>
+		</div>
+
+		<div class="menu-toggle">
+			<img class="iconMenu" src="~/Images/Diseños/menu.png" alt="menu icon" />
+		</div>
+
+		
+	</header>
+
+	<!-- Menú desplegable flotante -->
+	<div class="dropdown-menu" id="dropdownMenu">
+		<ul>
+			<li id="Edificios">
+				<img src="~/Images/Diseños/Edificio.png" alt="Edificios" />
+				Edificios
+			</li>
+			<li id="Salones">
+				<img src="~/Images/Diseños/aula.png" alt="Salones" />
+				Salones
+			</li>
+			<li id="Laboratorios">
+				<img src ="~/Images/Diseños/matraz.png" alt="Laboratorios" />
+				Laboratorios
+			</li>
+			<li id="Departamentos">
+				<img src="~/Images/Diseños/Departamento.png" alt="Departamentos" />
+				Departamentos
+			</li>
+			<li id="Areas">
+				<img src="~/Images/Diseños/Areas.png" alt="Áreas Comunes" />
+				Áreas Comunes
+			</li>
+			@* <li id="Salir">
+				<img src="~/Images/Diseños/CerrarSesion.png" alt="Salir" />
+				Salir
+			</li> *@
+		</ul>
+	</div>
+
+		<article class="navbar">
+			<div class="search2">
+				<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon"/>
+				<input class="searchtext" type="search" placeholder="Buscar..."/>
+			</div>
+		</article>
+
+	<main class="main">
+		
+		<div class="map-container">
+			<img class="map" src="~/Images/Diseños/MapaV3.svg" alt="map" />
+		</div>
+
+		<div>
+			<a id="MapaCompleto" class="floating-button">
+				<img src="~/Images/Diseños/Zoom.png" />
+			</a>
+		</div>
+
+	</main>
+
+	<article class="article">
+		<div class="scroll-container">
+		</div>
+	</article>
+
+	<nav class="footer">
+		<div class="nav-item">
+			<a class="GenerarRutas">
+				<img src="~/Images/Diseños/ruta.png" alt="ruta icon" />
+				<h3>Ruta</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Inicio">
+				<img src="~/Images/Diseños/casa.png" alt="home icon" />
+				<h3>Inicio</h3>
+			</a>
+		</div>
+		<div class="nav-item">
+			<a class="Ayuda">
+				<img src="~/Images/Diseños/Help.png" alt="help icon" />
+				<h3>Ayuda</h3>
+			</a>
+		</div>
+	</nav>
+	<script src="~/Scripts/Scroll.js"></script>
+	<script>
+		//MENU DERECHO
+			// Mapea los IDs de los elementos a las rutas correspondientes
+		const rutas = {
+			Areas: "/Areas",
+			Edificios: "/Edificios",
+			Salones: "/Salones",
+			Laboratorios: "/Laboratorios",
+			Departamentos: "/Departamentos",
+		};
+
+		// Espera a que el DOM esté completamente cargado
+		document.addEventListener("DOMContentLoaded", () => {
+			// Recorre cada entrada del mapa y asigna eventos
+			Object.keys(rutas).forEach((id) => {
+				const elemento = document.querySelector(`#${id}`);
+				if (elemento) { // Verifica que el elemento exista
+					elemento.addEventListener("click", () => {
+						window.location.replace(rutas[id]);
+					});
+				}
+			});
+
+			// Manejo especial para "Salir" si se requiere funcionalidad diferente
+			const salir = document.querySelector("#Salir");
+			if (salir) {
+				salir.addEventListener("click", () => {
+					console.log("Cerrar sesión");
+					window.location.replace("/Salir");
+				});
+			}
+		});
+						// Función para manejar el clic y guardar el ID en localStorage
+		function seleccionarElemento(event) {
+			// Evitar que el enlace navegue a otro lugar
+			event.preventDefault();
+
+			// Obtener el ID del laboratorio desde el contenido de <h2>
+			const idElemento = event.target.closest('.description').querySelector('.Title h2').textContent.trim();
+			console.log('ID seleccionado:', idElemento);
+
+			// Guardar el ID en localStorage
+			localStorage.setItem('elementoId', idElemento);
+
+			// Redirigir a otra vista (HTML) donde se mostrarán los detalles
+			window.location.href = 'Detalles'; // Cambia 'detalles.html' por tu vista destino
+		}
+
+		// Asignar el evento de clic a todos los enlaces con la clase "Detalles"
+		document.querySelectorAll('.Detalles').forEach(elemento => {
+			elemento.addEventListener('click', seleccionarElemento);
+		});
+
+
+	</script>
+	<script>
+		if ('serviceWorker' in navigator){
+			navigator.serviceWorker.register('/serviceworker.js?v=5');
+		}
+		//NAVEGACION
+		//ICONO SUPERIOR IZQUIERDO
+		let Icono = document.querySelector(".Icono").addEventListener("click", function () {
+			window.location.replace("/AboutUs");
+
+		});
+		// Mostrar/Ocultar el menú desplegable
+		document.querySelector('.menu-toggle').addEventListener('click', function () {
+			const menu = document.querySelector('#dropdownMenu');
+			menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+		});
+
+		// Cerrar el menú al hacer clic fuera de él
+		document.addEventListener('click', function (event) {
+			const menu = document.querySelector('#dropdownMenu');
+			const toggle = document.querySelector('.menu-toggle');
+
+			if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+				menu.style.display = 'none';
+			}
+		});
+		//NAVBAR INFERIOR
+		let Home = document.querySelector(".Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+		let Ruta = document.querySelector(".GenerarRutas").addEventListener("click", function () {
+			window.location.replace("/GenerarRuta");
+		});
+		let help = document.querySelector(".Ayuda").addEventListener("click", function () {
+			window.location.replace("/Ayuda");
+		});
+		//AMPLIAR MAPA INDEX
+				
+		document.addEventListener("DOMContentLoaded", function () {
+			const mapaCompletoBtn = document.getElementById('MapaCompleto');
+
+			if (mapaCompletoBtn) { // Verificamos
+				mapaCompletoBtn.addEventListener("click", function () {
+					console.log("click");
+					window.location.replace("/MapaCompleto");
+				});
+			}
+		});
+
+	</script>
+</body>
+</html>
+
+	
+
+

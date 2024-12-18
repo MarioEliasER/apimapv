@@ -1,0 +1,3352 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Evita el scroll horizontal y vertical */
+    overflow-x: hidden;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+.grid-container > * {
+    text-align: center;
+}
+
+
+.header {
+    grid-area: header;
+    background: rgba(255, 255, 255, 0.8);
+    background-color: #1B396A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    color: white;
+    height: 55px;
+}
+
+header h1 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.iconTitle {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 35px;
+    padding-right: 5px;
+}
+
+.iconMenu {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #fff;
+    align-content: center;
+    justify-items: center;
+}
+
+.search2 {
+    background: rgba(255, 255, 255, 255);
+    width: 60%;
+    top: 20px;
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    ;
+    background-color: #fff;
+}
+
+.busquedaIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+.searchtext {
+    border: none;
+    outline: none;
+    -webkit-appearance: none; /* Quita estilos por defecto en Chrome/Safari */
+    -moz-appearance: none; /* Quita estilos por defecto en Firefox */
+    appearance: none; /* Para otros navegadores */
+    padding: 3px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.main {
+    grid-area: main;
+    background-color: #fff;
+    width: 100%;
+    justify-content: center;
+}
+
+.map-container {
+    width: 100%;
+}
+
+.map {
+    width: 100%;
+}
+
+/* Botón flotante */
+.floating-button {
+    position: absolute;
+    top: 120px;
+    right: 355px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+    .floating-button img {
+        width: 35px;
+        height: 35px;
+    }
+
+/* Vista Edificios */
+.ListaElementos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+    .ListaElementos a {
+        text-decoration: none;
+    }
+
+.elementos {
+    display: flex;
+    background-color: #007EA7;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 10px;
+    height: 60px;
+    width: 100%;
+    color: white;
+    align-items: center;
+}
+
+    .elementos img {
+        width: 45px;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+
+.article {
+    grid-area: article;
+    align-content: center;
+    background-color: fff;
+}
+
+.scroll-container {
+    height: 80px;
+    overflow-y: none;
+    overflow-x: auto;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 5px;
+}
+
+
+.description {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #2a6fb4;
+    color: white;
+    border-radius: 8px;
+    max-width: 200px;
+}
+
+.scroll-container a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    width: 200px;
+    height: auto;
+    text-decoration: none;
+}
+
+.place-icon {
+    width: 40px;
+    margin-left: 5px;
+    object-fit: cover;
+}
+
+.Title h2 {
+    padding-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/*Vista Detalles */
+.ImgElemento {
+    width: 70%;
+    height: auto;
+    max-height: 500px;
+    position: fixed;
+    top: 120px;
+    margin-left: 38%;
+    border-radius: 8px;
+}
+
+.Info {
+    background-color: #296EB4;
+    color: white;
+    height: 150px;
+    position: fixed;
+    width: 60%;
+    justify-items: center;
+    align-content: center;
+    bottom: 70px;
+    max-height: 120px;
+    border-radius: 10px;
+    margin-left: 20%;
+}
+
+    .Info h3 {
+        font-size: large;
+        margin-bottom: 10px;
+    }
+
+    .Info p {
+        font-size: small;
+    }
+
+/* Vista ayuda */
+.Lista-Container2 {
+    padding-top: 5%;
+    width: 100%;
+}
+
+    .Lista-Container2 h3 {
+        margin-left: 10%;
+        width: 100%;
+        padding-top: 30px;
+    }
+
+.informacion {
+    padding-top: 20px;
+    font-size: 16px;
+    width: 100%;
+}
+
+    .informacion p {
+        width: 100%;
+        padding-left: 10%;
+    }
+
+    .informacion h4 {
+        padding-top: 20px;
+        width: 100%;
+        font-size: 22px;
+        margin-left: 25%;
+    }
+
+.listaAreas2 {
+    padding-top: 10px;
+    padding-left: 40%;
+    width: 100%;
+}
+
+.listaAreas {
+    padding-top: 10px;
+    padding-left: 40%;
+    width: 100%;
+}
+
+.imagAyuda {
+    width: 50%;
+    margin-left: 30%;
+}
+
+.imagAyuda2 {
+    width: 70%;
+    padding-top: 20px;
+    padding-left: 15%;
+}
+
+
+/* Estilo del menú flotante */
+.dropdown-menu {
+    position: absolute;
+    top: 70px; /* Ajustar para que quede fuera del header */
+    right: 20px; /* Alineado al borde derecho */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    overflow: hidden;
+    width: 250px; /* Tamaño del menú */
+}
+
+    .dropdown-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dropdown-menu li {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+        gap: 10px;
+        transition: background-color 0.2s ease;
+    }
+
+        .dropdown-menu li:hover {
+            background-color: #f0f0f0;
+        }
+
+    .dropdown-menu img {
+        width: 24px;
+        height: 24px;
+    }
+
+/* Vista InfoDesarrollador */
+.Container {
+    margin-top: 8%;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+}
+    .Container h3 {
+        color: black;
+        margin-bottom: 2%;
+    }
+
+.imagLogo {
+    max-width: 230px;
+    width: 100%;
+}
+
+#title {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.Desarrolladores {
+    text-align: left;
+    width: 100%;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.login {
+    width: 100%;
+    width: 150px;
+    height: 30px;
+    background-color: #007EA7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* Vista Generar Ruta */
+
+.ImgMapa2 {
+    position: absolute;
+    top: -25px;
+    left: 32px;
+    width: 80%;
+    height: 75%;
+    object-fit: contain;
+    z-index: 0;
+}
+
+.Info {
+    background-color: #296EB4;
+    color: white;
+    height: 120px;
+    max-height: 120px;
+    border-radius: 10px;
+}
+
+    .Info h4 {
+        font-size: medium;
+        padding-top: 10px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .Info p {
+        padding: 8px;
+        padding-top: 0;
+        font-size: small;
+        margin-top: 1;
+        text-align: left;
+    }
+
+.SeleccionarRuta2 {
+    position: relative;
+    background: rgba(255, 255, 255, 255);
+    z-index: 2;
+    top: 275px;
+    left: 2px;
+}
+
+    .SeleccionarRuta2 p {
+        margin-top: 2px;
+        padding: 0;
+        color: black;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+.SeleccionarRuta p {
+    margin-top: 2px;
+    padding: 0;
+    color: black;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.ruta {
+    width: 300px;
+    max-width: 300px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    border: none;
+    background-color: #D9D9D9;
+    text-align: center;
+    height: 20px;
+}
+
+.GenerarRuta {
+    position:fixed;
+    margin-left:-5%;
+    margin-top: 5.5px;
+    background-color: #296EB4;
+    border-radius: 6px;
+    height: 25px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #D9D9D9;
+    width: 100%;
+}
+
+
+
+/* Navegación inferior */
+nav {
+    background-color: #D9D9D9;
+    display: flex;
+    position: fixed;
+    justify-content: space-around;
+    bottom: 0;
+    height: auto;
+    align-items: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item img {
+    width: 35px;
+}
+
+nav h3 {
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+
+
+
+.grid-container {
+    display: grid;
+    /* gap: 10px; */
+    grid-template:
+        "header" 60px
+        "navbar" 50px
+        "main" auto
+        "article" 80px
+        "footer" 60px;
+}
+
+.grid-container {
+    overflow: hidden;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template:
+        "header" 70px
+        "navbar" 50px
+        "main2" auto
+        "footer" 60px;
+}
+
+.navbar {
+    position: fixed;
+    top: 8%;
+    width: 100%;
+    background-color: transparent;
+}
+
+.main2 {
+    grid-area: main2;
+    padding-top: 0px;
+    background-color: #fff;
+    width: 90%;
+    justify-content: center;
+    /* position:static; */
+    height: 100%;
+    margin-top: -22px;
+}
+
+
+.MapaCompleto {
+    width: 100%;
+    height: 100%;
+}
+
+.MapaCompleto-Container {
+    width: 100%;
+    height: 100%;
+}
+
+.mapCompleto {
+    align-self: center;
+    object-fit: contain;
+    width: 140%;
+    margin-top: 42%;
+   /* transform: translate(none);*/
+    transform: rotate(20deg);
+}
+
+.floating-buttonReturn {
+    position: fixed;
+    top: 40px;
+    left: 30px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+    .floating-buttonReturn img {
+        width: 45px;
+        height: 45px;
+    }
+
+
+
+
+/* Media Queries */
+
+@media (min-width:1023px) and (max-height:600px) {
+    .main {
+        /* align-self: center; */
+        background-color: #fff;
+    }
+
+    .map-container {
+        width: 100%;
+    }
+
+    .map {
+        width: 100%;
+        transform: rotate(none);
+        object-fit: contain;
+    }
+
+    .main2 {
+        grid-area: main2;
+        padding-top: 0px;
+        background-color: #fff;
+        /* width: 100%;*/
+        justify-content: center;
+        /* position:static; */
+        height: 100%;
+        margin-top: -22px;
+    }
+    /* Vista ayuda */
+    .Lista-Container2 {
+        padding-top: 5%;
+        width: 100%;
+    }
+
+        .Lista-Container2 h3 {
+            margin-left: -15%;
+        }
+
+    .informacion {
+        padding-top: 20px;
+        margin-left: 10%;
+        font-size: 14px;
+    }
+
+        .informacion h4 {
+            padding-top: 20px;
+            font-size: 18px;
+            margin-left: 3%;
+        }
+
+    .floating-button {
+        position: absolute;
+        top: 15%;
+        right: 10%;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button img {
+            width: 35px;
+            height: 35px;
+        }
+    .elementos {
+        margin-bottom: 10px;
+    }
+
+        .elementos img {
+            width: 35px;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+    /*Vista Detalles */
+    .ImgElemento {
+        width: 70%;
+        height: 600px;
+        max-height: 650px;
+        position: fixed;
+        top: 250px;
+        margin-left: 12%;
+        border-radius: 8px;
+    }
+
+    .Info {
+        background-color: #296EB4;
+        color: white;
+        height: 150px;
+        position: fixed;
+        width: 90%;
+        justify-items: center;
+        align-content: center;
+        bottom: 130px;
+        max-height: 110px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 5%;
+    }
+    .informacion p {
+        text-align: left;
+    }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        text-align: left;
+        margin-left: 8%;
+        width: 100%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 5%;
+        width: 90%;
+    }
+
+        .listaAreas li {
+            padding-top: 15px;
+        }
+
+    .imagAyuda {
+        width: 35%;
+        margin-left: 30%;
+    }
+
+    .imagAyuda2 {
+        width: 70%;
+        padding-top: 20px;
+        padding-left: 25%;
+    }
+    /* Generar Ruta */
+    .ImgMapa {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 5%;
+        margin-left: 50%;
+    }
+
+    .ImgRuta {
+        position: absolute;
+        top: 2%;
+        left: 20%;
+        width: 30%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 0;
+    }
+
+    .SeleccionarRuta2 {
+        position: absolute;
+        display: grid;
+        background: rgba(255, 255, 255, 255);
+        z-index: 2;
+        top: 40%;
+        left: 55%;
+    }
+
+        .SeleccionarRuta2 p {
+            margin-top: 2px;
+            padding: 0;
+            color: black;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+    .ruta {
+        width: 300px;
+        max-width: 300px;
+        margin-bottom: 4px;
+        border-radius: 8px;
+        border: none;
+        background-color: #D9D9D9;
+        text-align: center;
+        height: 20px;
+    }
+
+    .GenerarRuta {
+        position: fixed;
+        margin-top: 2%;
+        margin-left: 8%;
+        background-color: #296EB4;
+        border-radius: 6px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    .scroll-container {
+        position: fixed;
+        z-index: 2;
+        height: 130px;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 5px;
+        bottom: 10%;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+
+    .description {
+        width: 100%;
+        min-width: 290px;
+        height: 65%;
+        padding: 2px;
+        font-size: 13px;
+    }
+
+    .place-icon {
+        width: 21%;
+        align-content: center;
+        height: 8%;
+        margin-left: 5%;
+        margin-right: 3%;
+        object-fit: contain;
+    }
+
+    .Container h3 {
+        color: black;
+        margin-bottom: 2%;
+    }
+    .scroll-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+        .scroll-container a:hover {
+            cursor: pointer;
+        }
+
+    .Title {
+        width: 95%;
+    }
+
+      .Title h2 {
+            margin-left: -40%;
+            font-weight: bolder;
+            font-size: 14px;
+        }
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 150%;
+        margin-top: 42%;
+        transform: rotate(none);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 45px;
+            height: 45px;
+        }
+    .floating-button2 {
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        /* background: rgba(255, 255, 255, 1); */
+        z-index: 2;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button2:hover {
+            cursor: pointer;
+        }
+
+        .floating-button2 img {
+            width: 40px;
+            height: 40px;
+        }
+}
+
+/* Pantallas chicas */
+
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template:
+            "header  header" 60px
+            "navbar  navbar" 50px
+            "main" auto
+            "article" 80px
+            "footer  footer" 60px;
+    }
+
+    .grid-container2 {
+        grid-template:
+            "header  header" 60px
+            "navbar  navbar" 50px
+            "main2" auto
+            "footer  footer" 60px;
+    }
+
+    .map-container {
+        position: relative;
+        height: 100%;
+        top: -10px;
+        width: 100%;
+    }
+
+    .navbar {
+        background-color: transparent;
+    }
+
+    .map {
+        position: absolute;
+        left: 5%;
+        top: 15%;
+        width: 70%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .scroll-container {
+        /* position: relative; */
+        z-index: 2;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 2px;
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        flex-direction: row;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 15%;
+        right: 20%;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button img {
+            width: 35px;
+            height: 35px;
+        }
+
+
+
+    .description {
+        width: 100%;
+        min-width: 230px;
+        height: 65px;
+        padding: 5px;
+        font-size: 13px;
+    }
+
+    .place-icon {
+        width: 21%;
+        align-content:center;
+         height: 8%;
+        margin-left: 5%;
+        margin-right:3%;
+        object-fit: contain;
+      
+    }
+
+    /* Estilo para el contenedor de la descripción (flexbox) */
+    .scroll-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 360px;
+    }
+    .Title{
+        width:90%;
+    }
+    .Title h2 {
+        margin-left:-16%;
+        font-weight: bolder;
+        font-size: 13px;
+    }
+
+
+    /* Vista Edificios */
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* margin-left: 60px;
+	margin-right: 60px; */
+        justify-self: center;
+        width: 80%;
+        padding-top: 20px;
+    }
+    .elementos {
+        margin-bottom: 10px;
+    }
+    /*Vista Detalles */
+    .ImgElemento {
+        width: 45%;
+        height: auto;
+        max-height: 400px;
+        position: fixed;
+        top: 120px;
+        margin-left: 28%;
+        border-radius: 8px;
+    }
+
+    .Info {
+        background-color: #296EB4;
+        color: white;
+        height: 145px;
+        position: fixed;
+        width: 60%;
+        justify-items: center;
+        align-content: center;
+        bottom: 70px;
+        max-height: 100px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 15%;
+    }
+
+        .Info p {
+            font-size: small;
+            padding: 2px;
+            text-align: center;
+        }
+    .floating-button2 {
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        /* background: rgba(255, 255, 255, 1); */
+        z-index: 2;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button2:hover {
+            cursor: pointer;
+        }
+
+        .floating-button2 img {
+            width: 35px;
+            height: 35px;
+        }
+
+    /* Vista ayuda */
+    .Lista-Container2 {
+        margin-top: -3%;
+        width: 100%;
+    }
+
+        .Lista-Container2 h3 {
+            margin-left: 23%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+        }
+
+    .informacion {
+        padding-top: 1%;
+        font-size: 14px;
+        margin-left: 5%;
+    }
+
+        .informacion h4 {
+            padding-top: 25px;
+            font-size: 18px;
+            margin-left: 10%;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+        }
+
+        .informacion ul {
+            width: 85%;
+        }
+
+        .informacion p {
+            width: 100%;
+        }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        padding-left: -28%;
+        width: 90%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: -28%;
+        width: 90%;
+    }
+
+        .listaAreas li {
+            padding-top: 10px;
+        }
+
+    .imagAyuda {
+        width: 18%;
+        margin-left: 35%;
+    }
+
+    .imagAyuda2 {
+        width: 40%;
+        padding-top: 20px;
+        margin-left: 20%;
+    }
+
+    /* Vista InfoDesarrollador */
+    .Container {
+        height: 100%;
+        margin: auto;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+        .Container h3 {
+            color: black;
+            margin-bottom: 2%;
+        }
+
+    .imagLogo {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    #title {
+        width: 100%;
+        margin-top: 40px;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .Desarrolladores {
+        text-align: left;
+        width: 100%;
+        color: black;
+        font-size: 18px;
+        padding-left: 40%;
+        margin-bottom: 20px;
+    }
+
+    /* Generar Ruta */
+    .ImgMapa {
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 5%;
+        margin-left: 50%;
+    }
+
+    .ImgRuta {
+        position: fixed;
+        top: 2%;
+        left: 25%;
+        width: 25%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 0;
+    }
+
+    .SeleccionarRuta2 {
+        position: fixed;
+        display: grid;
+        background: rgba(255, 255, 255, 255);
+        z-index: 2;
+        top: 40%;
+        left: 55%;
+    }
+
+        .SeleccionarRuta2 p {
+            margin-top: 2px;
+            padding: 0;
+            color: black;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+    .ruta {
+        width: 300px;
+        max-width: 300px;
+        margin-bottom: 4px;
+        border-radius: 8px;
+        border: none;
+        background-color: #D9D9D9;
+        text-align: center;
+        height: 20px;
+    }
+
+    .GenerarRuta {
+        position: fixed;
+        margin-top: 2%;
+        margin-left: 5%;
+        background-color: #296EB4;
+        border-radius: 6px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 140%;
+        margin-top: 42%;
+        transform: rotate(90deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 35px;
+            height: 35px;
+        }
+
+
+}
+
+/* Pantalla Grande*/
+
+@media (min-width:1000px) {
+    .grid-container {
+        grid-template:
+            "header  header header" 70px
+            "navbar  navbar" 50px
+            "main" auto
+            "article article article" 80px
+            "footer  footer footer" 60px;
+    }
+
+    .grid-container2 {
+        grid-template:
+            "header  header header" 70px
+            "navbar  navbar" 50px
+            "main2" auto
+            "footer  footer footer" 60px;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 100%;
+        top: -15%;
+        justify-self: center;
+    }
+
+    .navbar {
+        top: 60px;
+        background-color: transparent;
+    }
+
+    .search2 {
+        width: 75%;
+    }
+
+    .map {
+        margin-left:-4%;
+        justify-self: center;
+        width: 100%;
+        height: 85%;
+    }
+    .main2 {
+        grid-area: main2;
+        padding-top: 0px;
+        background-color: #fff;
+        width: 100%;
+        justify-content: center;
+        /* position:static; */
+        height: 100%;
+        margin-top: -22px;
+    }
+
+
+    .scroll-container {
+        position: fixed;
+        z-index: 2;
+        height: 130px;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 5px;
+        bottom: 10%;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+
+    .description {
+        width: 100%;
+        min-width: 290px;
+        height: 65%;
+        padding: 2px;
+        font-size: 13px;
+    }
+
+    .place-icon {
+        width: 18%;
+        align-content:center;
+         height: 8%;
+        margin-left: 3%;
+        margin-right:1%;
+        object-fit: contain;
+    }
+
+    /* Estilo para el contenedor de la descripción (flexbox) */
+    .scroll-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .scroll-container a:hover{
+        cursor:pointer;
+    }
+    .Title{
+        width:100%;
+    }
+    .Title h2 {
+        margin-left:-2%;
+        font-weight: bolder;
+        font-size: 14px;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 18%;
+        right: 8%;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+    .floating-button:hover {
+        cursor: pointer;
+    }
+        .floating-button img {
+            width: 35px;
+            height: 35px;
+        }
+
+    /* Vista Edificios */
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-self: center;
+        width: 60%;
+    }
+    .elementos {
+        margin-bottom: 10px;
+    }
+    .elementos img{
+        width:35px;
+        height:35px;
+        margin-left:10px;
+        margin-right:20px;
+    }
+    .elementos:hover {
+        cursor: pointer;
+    }
+    .iconMenu:hover{
+        cursor:pointer;
+    }
+
+    /*Vista Detalles */
+
+    .ImgElemento {
+        width: 30%;
+        height: auto;
+        max-height: 450px;
+        position: fixed;
+        top: 90px;
+        margin-left: 36%;
+        border-radius: 8px;
+    }
+
+    .Info {
+        background-color: #296EB4;
+        color: white;
+        height: 90px;
+        position: fixed;
+        width: 50%;
+        justify-items: center;
+        align-content: center;
+        bottom: 70px;
+        max-height: 110px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 25%;
+    }
+
+        .Info p {
+            font-size: small;
+            padding: 2px;
+            text-align: center;
+        }
+
+    /* Vista ayuda */
+    .Lista-Container2 {
+        margin-top: 1%;
+        width: 100%;
+    }
+
+        .Lista-Container2 h3 {
+            margin-left: 20%;
+            font-size:20px;
+        }
+
+    .informacion {
+        margin-top: -4%;
+        margin-left: 20%;
+        font-size: 14px;
+        width: 90%;
+    }
+
+        .informacion h4 {
+            padding-top: 20px;
+            font-size: 18px;
+            margin-left: -2%;
+        }
+
+        .informacion ul {
+            width: 85%;
+            margin-left: -7%;
+        }
+
+        .informacion p {
+            margin-left: -12%;
+        }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        text-align: left;
+        margin-left: 35%;
+        width: 100%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        text-align: left;
+        margin-left: 35%;
+        width: 100%;
+    }
+
+        .listaAreas li {
+            padding-top: 15px;
+        }
+
+    .imagAyuda {
+        width: 20%;
+        margin-left: 28%;
+    }
+
+    .imagAyuda2 {
+        width: 40%;
+        padding-top: 20px;
+        margin-left: 10%;
+    }
+
+    /* Vista Ayuda */
+    .informacion {
+        padding-top: 5%;
+        width: 80%;
+        padding-left: -25%;
+        font-size: 14px;
+    }
+
+        .informacion h4 {
+            padding-top: 20px;
+            font-size: 18px;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+            margin-left: 0;
+        }
+
+        .informacion ul {
+            margin-left: -2%;
+            width: 85%;
+        }
+
+        .informacion p {
+            width: 90%;
+            margin-left: -10%;
+        }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+        .listaAreas li {
+            padding-top: 15px;
+        }
+
+    .Container {
+        height: 100%;
+        margin: auto;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .imagLogo {
+        max-width: 200px;
+        width: 100%;
+    }
+
+    #title {
+        width: 100%;
+        margin-top: 40px;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .Desarrolladores {
+        text-align: left;
+        width: 100%;
+        color: black;
+        font-size: 18px;
+        padding-left: 40%;
+        margin-bottom: 20px;
+    }
+    .Container h3{
+        color:black;
+        margin-bottom:2%;
+    }
+    /* Generar Ruta */
+    .ImgMapa {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: -8%;
+        margin-left: -20%;
+    }
+
+    .ImgRuta {
+        position: absolute;
+        top: -1%;
+        left: 23%;
+        width: 30%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 0;
+    }
+
+    .SeleccionarRuta2 {
+
+        position: absolute;
+        display: grid;
+        background: rgba(255, 255, 255, 255);
+        z-index: 2;
+        top: 40%;
+        left: 55%;
+    }
+
+        .SeleccionarRuta2 p {
+            margin-top: 2px;
+            padding: 0;
+            color: black;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+    .ruta {
+        width: 300px;
+        max-width: 300px;
+        margin-bottom: 4px;
+        border-radius: 8px;
+        border: none;
+        background-color: #D9D9D9;
+        text-align: center;
+        height: 20px;
+    }
+
+    .GenerarRuta {
+        position: fixed;
+        margin-top: 10%;
+        margin-left: 7%;
+        background-color: #296EB4;
+        border-radius: 6px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    .GenerarRuta:hover{
+        cursor: pointer;
+    }
+
+    .MapaCompleto{
+        width:100%;
+        height:100%;
+    }
+    .MapaCompleto-Container {
+        width: 100%;
+        height:100%;
+    }
+
+    .mapCompleto {
+        position:fixed;
+        width: 90%;
+        margin-top: 1%;
+        margin-left: 4%;
+        transform: none;
+
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 35px;
+            height: 35px;
+        }
+
+    .floating-button2 {
+        position: fixed;
+        top: 60px;
+        left: 20px;
+        /* background: rgba(255, 255, 255, 1); */
+        z-index: 2;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+    .floating-button2:hover{
+        cursor:pointer;
+    }
+
+        .floating-button2 img {
+            width: 35px;
+            height: 35px;
+        }
+
+    .nav-item:hover{
+        cursor:pointer;
+    }
+    .Icono:hover{
+        cursor:pointer;
+    }
+
+}
+
+@media (max-width:1024px) and (max-height: 1400px) and (min-height:700px) {
+    .grid-container {
+        grid-template:
+            "header  header header" 60px
+            "navbar  navbar" 50px
+            "main" auto
+            "article article article" 80px
+            "footer  footer footer" 60px;
+    }
+
+    .grid-container2 {
+        grid-template:
+            "header  header header" 60px
+            "navbar  navbar" 50px
+            "main2" auto
+            "footer  footer footer" 60px;
+    }
+
+    .navbar {
+        top: 65px;
+        background-color: transparent;
+    }
+
+    .search2 {
+        width: 80%;
+    }
+
+
+    .main {
+        height: 100%;
+    }
+
+    .map-container {
+        position: relative;
+        width: 100%;
+        margin-top: -20px;
+        height: 110%;
+    }
+
+    .map {
+        width: 100%;
+        height: 100%;
+        top: 6%;
+        object-fit: contain;
+        transform: rotate(70deg);
+    }
+
+    .scroll-container {
+        position: fixed;
+        z-index: 2;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        bottom: 5%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 5px;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        flex-direction: row;
+        cursor: pointer;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 10%;
+        right: 11%;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button img {
+            width: 35px;
+            height: 35px;
+        }
+
+    .description {
+        width: 100%;
+        min-width: 290px;
+        height: 77px;
+        padding: 2px;
+        font-size: 13px;
+    }
+
+    .place-icon {
+        width: 20%;
+        align-content: center;
+        height: 7%;
+        margin-left: 5%;
+        margin-right: 1%;
+        object-fit: contain;
+    }
+
+  
+    .scroll-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 320px;
+        cursor: pointer;
+    }
+    .Title{
+        width:100%;
+    }
+    .Title h2 {
+        font-weight: bolder;
+        font-size: 13px;
+    }
+
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-self: center;
+        width: 75%;
+        padding-top: 20px;
+    }
+
+    .elementos {
+        margin-bottom: 10px;
+    }
+
+        .elementos img {
+            width: 35px;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+    /*Vista Detalles */
+    .ImgElemento {
+        width: 75%;
+        height: 750px;
+        max-height: 800px;
+        position: fixed;
+        top: 250px;
+        margin-left: 12%;
+        border-radius: 8px;
+    }
+
+    .Info {
+        background-color: #296EB4;
+        color: white;
+        height: 150px;
+        position: fixed;
+        width: 90%;
+        justify-items: center;
+        align-content: center;
+        bottom: 130px;
+        max-height: 110px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 5%;
+    }
+
+        .Info p {
+            font-size: small;
+            padding: 2px;
+            text-align: center;
+        }
+    .floating-button2 {
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        /* background: rgba(255, 255, 255, 1); */
+        z-index: 2;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button2:hover {
+            cursor: pointer;
+        }
+
+        .floating-button2 img {
+            width: 40px;
+            height: 40px;
+        }
+
+    /* Vista ayuda */
+    .Lista-Container2 {
+        margin-top: -3%;
+        width: 100%;
+    }
+
+        .Lista-Container2 h3 {
+            margin-left: 10%;
+            width: 100%;
+            padding-top: 30px;
+        }
+
+    .informacion {
+        margin-top: 5px;
+        margin-left: 10%;
+        font-size: 16px;
+        width: 100%;
+    }
+
+        .informacion p {
+            width: 100%;
+            margin-left: -10%;
+        }
+
+        .informacion ul {
+            margin-left: -2%;
+            width: 85%;
+        }
+
+        .informacion h4 {
+            padding-top: 20px;
+            width: 100%;
+            font-size: 22px;
+            margin-left: 0;
+        }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        padding-left: 2%;
+        width: 100%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        padding-left: 2%;
+        width: 100%;
+    }
+
+    .imagAyuda {
+        width: 35%;
+        margin-left: 23%;
+    }
+
+    .imagAyuda2 {
+        width: 60%;
+        padding-top: 20px;
+        margin-left: 5%;
+    }
+
+    /* Vista About Us */
+    .Container {
+        height: 100%;
+        margin: auto;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+        .Container h3 {
+            color: black;
+            margin-bottom: 2%;
+        }
+    .imagLogo {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    #title {
+        width: 100%;
+        margin-top: 40px;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .Desarrolladores {
+        text-align: left;
+        width: 100%;
+        color: black;
+        font-size: 18px;
+        padding-left: 35%;
+        margin-bottom: 20px;
+    }
+
+    /* Generar Ruta */
+    .ImgMapa {
+        /* position: relative; */
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 1%;
+        margin-left: -10%;
+    }
+
+    .ImgRuta {
+        /* position: absolute; */
+        top: -10%;
+        left: 25%;
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 0;
+    }
+
+    .SeleccionarRuta2 {
+        /* position: absolute; */
+        display: grid;
+        background: rgba(255, 255, 255, 255);
+        z-index: 2;
+        top: 60%;
+        left: 35%;
+        cursor: pointer;
+    }
+
+        .SeleccionarRuta2 p {
+            margin-top: 2px;
+            padding: 0;
+            color: black;
+            text-align: left;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+    .ruta {
+        width: 350px;
+        max-width: 350px;
+        margin-bottom: 4px;
+        border-radius: 8px;
+        font-size: 19px;
+        border: none;
+        background-color: #D9D9D9;
+        text-align: center;
+
+        height: 35px;
+    }
+
+        .ruta option {
+            cursor: pointer;
+            font-size: 13px; /* Tamaño del texto dentro del desplegable */
+            padding: 1px; /* Espaciado interno de cada opción */
+        }
+
+    .GenerarRuta {
+        position: fixed;
+        margin-top: 15%;
+        font-size: 19px;
+        margin-left: 9%;
+        background-color: #296EB4;
+        border-radius: 6px;
+        height: 50px;
+        padding: 15px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .MapaCompleto{
+        width:100%;
+        height:100%;
+    }
+    .MapaCompleto-Container {
+        width: 100%;
+    }
+
+    .mapCompleto {
+      /*  position:fixed;*/
+        object-fit: contain;
+        width: 135%;
+        margin-top:35%;
+        margin-left: -10%;
+        transform: rotate(90deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 40px;
+            height: 40px;
+        }
+}
+
+
+
+/* Pantallas chicas */
+
+@media (max-width: 999px) {
+    .grid-container {
+        grid-template:
+            "header  header header" 60px
+            "navbar  navbar" 50px
+            "main" auto
+            "article article article" 80px
+            "footer  footer footer" 60px;
+    }
+
+    .grid-container2 {
+        grid-template:
+            "header  header header" 60px
+            "navbar  navbar" 50px
+            "main2" auto
+            "footer  footer footer" 60px;
+    }
+
+    .navbar {
+        top: 70px;
+    }
+
+    .navbar {
+        background-color: transparent;
+    }
+
+
+    .main {
+        /* align-self: center; */
+        background-color: #fff;
+    }
+    
+    .map-container {
+        width: 100%;
+        top: -30px;
+    }
+
+    .map {
+        width: 120%;
+        margin-left:-10%;
+        top: 5%;
+        transform: rotate(70deg);
+        object-fit: contain;
+    }
+
+    .scroll-container {
+        z-index: 2;
+        height: 110px;
+        margin-top: -75px;
+        position: fixed;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        /* padding: 10px; */
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 130px;
+        right: 65px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button img {
+            width: 35px;
+            height: 35px;
+        }
+
+    .search2 {
+        width: 85%;
+    }
+
+    .description {
+        width: 100%;
+        min-width: 250px;
+        height: 77px;
+        padding: 0;
+        font-size: 13px;
+    }
+
+    .place-icon {
+
+        width: 20%;
+        align-content: center;
+        height: 8%;
+        margin-left: 5%;
+        margin-right: 5%;
+        object-fit: contain;
+    }
+
+
+    .scroll-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 320px;
+    }
+
+
+    /* Vista Edificios */
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left:11%;
+        width: 80%;
+        justify-self:center;
+        padding-top: 10px;
+    }
+    .elementos {
+        margin-bottom: 10px;
+    }
+
+        .elementos img {
+            width: 35px;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+    .Title{
+        width:100%;
+    }
+    .Title h2 {
+        margin-left:-10%;
+        font-weight: bolder;
+        font-size: 13px;
+    }
+
+    /*Vista Detalles */
+    .ImgElemento {
+        width: 80%;
+        height: 670px;
+        max-height: 680px;
+        position: fixed;
+        top: 260px;
+        margin-left: 10%;
+        border-radius: 8px;
+    }
+
+    .Info {
+        background-color: #296EB4;
+        color: white;
+        height: 150px;
+        position: fixed;
+        width: 90%;
+        justify-items: center;
+        align-content: center;
+        bottom: 110px;
+        max-height: 110px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 6%;
+    }
+
+        .Info p {
+            font-size: small;
+            padding: 2px;
+            text-align: center;
+        }
+    .floating-button2 {
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        /* background: rgba(255, 255, 255, 1); */
+        z-index: 2;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button2:hover {
+            cursor: pointer;
+        }
+
+        .floating-button2 img {
+            width: 40px;
+            height: 40px;
+        }
+
+    .Container {
+        height: 100%;
+        margin: auto;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+        .Container h3 {
+            color: black;
+            margin-bottom: 3%;
+        }
+
+    .imagLogo {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    #title {
+        width: 100%;
+        margin-top: 40px;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .Desarrolladores {
+        text-align: left;
+        width: 100%;
+        color: black;
+        font-size: 18px;
+        padding-left: 26%;
+        margin-bottom: 20px;
+    }
+
+    .login {
+        width: 100%;
+        width: 150px;
+        height: 30px;
+        background-color: #007EA7;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    /* Vista ayuda */
+    .Lista-Container2 {
+        justify-items: center;
+        padding-top: 5%;
+        width: 100%;
+        padding-left: 1%;
+    }
+
+        .Lista-Container2 h3 {
+            margin-left: 12%;
+            font-size: 22px;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+        }
+
+    .informacion {
+        padding-top: 5%;
+        width: 100%;
+        padding-left: -15%;
+        font-size: 14px;
+    }
+
+        .informacion h4 {
+            padding-top: 20px;
+            font-size: 18px;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+            margin-left: 7%;
+        }
+
+        .informacion ul {
+            margin-left: 5%;
+            width: 85%;
+        }
+
+        .informacion p {
+            width: 90%;
+            margin-left: -5%;
+        }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+        .listaAreas li {
+            padding-top: 15px;
+        }
+
+    .imagAyuda {
+        width: 35%;
+        padding-top: 20px;
+        margin-left: 30%;
+    }
+
+    .imagAyuda2 {
+        width: 60%;
+        padding-top: 20px;
+        margin-left: 10%;
+    }
+
+    /* Generar Ruta */
+    .ImgMapa {
+        position: absolute;
+        width:10%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 5%;
+        margin-left: 50%;
+    }
+
+    .ImgRuta {
+        top: -15%;
+        left: 20%;
+        width: 60%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 0;
+    }
+
+    .SeleccionarRuta2 {
+        display: grid;
+        background: rgba(255, 255, 255, 255);
+        z-index: 2;
+        top: 57%;
+        left: 29%;
+    }
+
+        .SeleccionarRuta2 p {
+            margin-top: 2px;
+            padding: 0;
+            font-size: 22px;
+            color: black;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+    .ruta {
+        width: 310px;
+        max-width: 310px;
+        margin-bottom: 4px;
+        border-radius: 8px;
+        border: none;
+        background-color: #D9D9D9;
+        text-align: center;
+        height: 35px;
+        font-size: 19px;
+    }
+
+    .GenerarRuta {
+        position: fixed;
+        margin-top: 20%;
+        margin-left: 10%;
+        background-color: #296EB4;
+        border-radius: 6px;
+        height: 40px;
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .mapCompleto {
+        object-fit: contain;
+        width: 190%;
+        margin-left:-42%;
+        margin-top: 65%;
+        transform: rotate(90deg);
+    }
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 50px;
+            height: 50px;
+        }
+
+}
+
+@media (max-width: 999px) and (max-height:1188px) and (min-height:600px) {
+    .grid-container {
+        grid-template:
+            "header  header header" 60px
+            "navbar  navbar" 50px
+            "main" auto
+            "article article article" 80px
+            "footer  footer footer" 60px;
+    }
+
+    .grid-container2 {
+        grid-template:
+            "header  header header" 60px
+            "navbar  navbar" 50px
+            "main2" auto
+            "footer  footer footer" 60px;
+    }
+
+    .navbar {
+        top: 70px;
+    }
+
+    .navbar {
+        background-color: transparent;
+    }
+
+
+    .main {
+        /* align-self: center; */
+        background-color: #fff;
+    }
+
+
+    .main2 {
+        grid-area: main2;
+        padding-top: 0px;
+        background-color: #fff;
+        /* width: 100%;*/
+        justify-content: center;
+        /* position:static; */
+        height: 100%;
+        margin-top: -22px;
+    }
+    .map-container {
+        width: 100%;
+        top: -35px;
+    }
+
+    .map {
+        width: 100%;
+        top: 2%;
+        left: 10%;
+        transform: rotate(0deg);
+        object-fit: contain;
+    }
+
+    .scroll-container {
+        z-index: 2;
+        position: fixed;
+        height: 110px;
+        bottom: 9%;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 130px;
+        right: 65px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button img {
+            width: 35px;
+            height: 35px;
+        }
+
+    .search2 {
+        width: 85%;
+    }
+
+    .description {
+        width: 100%;
+        min-width: 260px;
+        height: 85%;
+        padding: 0;
+        font-size: 13px;
+    }
+
+    .place-icon {
+        width: 24%;
+        align-content: center;
+        height: 9%;
+        margin-left: 5%;
+        margin-right: 3%;
+        object-fit: contain;
+    }
+
+
+    .scroll-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 320px;
+    }
+
+
+    /* Vista Edificios */
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left:11%;
+        width: 85%;
+        justify-self:center;
+        padding-top: 10px;
+    }
+    .elementos {
+        margin-bottom: 10px;
+    }
+
+        .elementos img {
+            width: 35px;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+    .Title{
+        width:100%;
+    }
+
+    .Title h2 {
+        margin-left:-11%;
+        font-weight: bolder;
+        font-size: 13px;
+    }
+    /*Vista Detalles */
+    .ImgElemento {
+        width: 70%;
+        height: 560px;
+        max-height: 570px;
+        position: fixed;
+        top: 18%;
+        margin-left: 15%;
+        border-radius: 8px;
+    }
+
+    .Info {
+        background-color: #296EB4;
+        color: white;
+        height: 120px;
+        position: fixed;
+        width: 80%;
+        justify-items: center;
+        align-content: center;
+        bottom: 70px;
+        max-height: 100px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 10%;
+    }
+
+        .Info p {
+            font-size: small;
+            padding: 2px;
+            text-align: center;
+        }
+    .floating-button2 {
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        /* background: rgba(255, 255, 255, 1); */
+        z-index: 2;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button2:hover {
+            cursor: pointer;
+        }
+
+        .floating-button2 img {
+            width: 40px;
+            height: 40px;
+        }
+
+    /* Vista Desarrolladores */
+    .Container {
+        height: 100%;
+        margin: auto;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+        .Container h3 {
+            color: black;
+            margin-bottom: 2%;
+        }
+    .imagLogo {
+        max-width: 250px;
+        width: 100%;
+    }
+
+    #title {
+        width: 100%;
+        margin-top: 40px;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .Desarrolladores {
+        text-align: left;
+        width: 100%;
+        color: black;
+        font-size: 18px;
+        padding-left: 28%;
+        margin-bottom: 20px;
+    }
+
+    .login {
+        width: 100%;
+        width: 150px;
+        height: 30px;
+        background-color: #007EA7;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    /* Vista ayuda */
+    .Lista-Container2 {
+        justify-items: center;
+        padding-top: 5%;
+        width: 100%;
+        padding-left: 1%;
+    }
+
+        .Lista-Container2 h3 {
+            margin-left: 12%;
+            font-size: 22px;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+        }
+
+    .informacion {
+        padding-top: 5%;
+        width: 100%;
+        padding-left: -15%;
+        font-size: 14px;
+    }
+
+        .informacion h4 {
+            padding-top: 20px;
+            font-size: 18px;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+            margin-left: 7%;
+        }
+
+        .informacion ul {
+            margin-left: 5%;
+            width: 85%;
+        }
+
+        .informacion p {
+            width: 90%;
+            margin-left: -5%;
+        }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+        .listaAreas li {
+            padding-top: 15px;
+        }
+
+    .imagAyuda {
+        width: 35%;
+        padding-top: 20px;
+        margin-left: 30%;
+    }
+
+    .imagAyuda2 {
+        width: 60%;
+        padding-top: 20px;
+        margin-left: 10%;
+    }
+
+    /* Generar Ruta */
+    .ImgMapa {
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 5%;
+        margin-left: 50%;
+    }
+
+    .ImgRuta {
+        top: -5%;
+        left: 25%;
+        width: 50%;
+        height: 100%;
+        max-height:80%;
+        object-fit: contain;
+        z-index: 0;
+    }
+
+    .SeleccionarRuta2 {
+        position: fixed;
+        display: grid;
+        background: rgba(255, 255, 255, 255);
+        z-index: 2;
+        top: 60%;
+        left: 35%;
+    }
+
+        .SeleccionarRuta2 p {
+            margin-top: 2px;
+            padding: 0;
+            font-size: 18px;
+            color: black;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+    .ruta {
+        width: 270px;
+        max-width: 280px;
+        margin-bottom: 4px;
+        border-radius: 8px;
+        border: none;
+        background-color: #D9D9D9;
+        text-align: center;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .GenerarRuta {
+        position: fixed;
+        margin-top: 16%;
+        margin-left: 10%;
+        background-color: #296EB4;
+        border-radius: 6px;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 160%;
+        margin-left:-25%;
+        margin-top: 42%;
+        transform: rotate(90deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 40px;
+        left: 30px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 45px;
+            height: 45px;
+        }
+
+}
+
+/* Estilos para pantallas pequeñas */
+
+@media (min-width:200px) and (max-width: 600px) {
+    .grid-container {
+        grid-template:
+            "header  header" 60px
+            "navbar  navbar" 50px
+            "main" auto
+            "article" 80px
+            "footer  footer" 60px;
+    }
+
+    .grid-container2 {
+        grid-template:
+            "header  header" 60px
+            "navbar  navbar" 50px
+            "main2" auto
+            "footer  footer" 60px;
+    }
+    .grid-container2{
+        width:100%;
+    }
+
+
+    .search2 {
+        width: 85%;
+    }
+
+
+    .navbar {
+        background-color: transparent;
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+    }
+
+    .main2 {
+        grid-area: main2;
+        padding-top: 0px;
+        background-color: #fff;
+        width: 100%;
+        justify-content: center;
+        /* position:static; */
+        height: 100%;
+        margin-top: -22px;
+    }
+    .map-container {
+        position: relative;
+        height: 120%;
+        width: 100%;
+    }
+
+    .map {
+        height: 100%;
+        margin-left: -10%;
+        top: -10%;
+        width: 135%;
+        transform: rotate(70deg);
+        object-fit: contain;
+    }
+
+    .scroll-container {
+        position: fixed;
+        z-index: 2;
+        height: 88px;
+        bottom: 10%;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .floating-button {
+        position: absolute;
+        top: 130px;
+        right: 35px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button img {
+            width: 35px;
+            height: 35px;
+        }
+
+
+    .description {
+        width: 100%;
+        min-width: 220px;
+        height: 63px;
+        padding: 4px;
+        font-size: 13px;
+    }
+
+    .place-icon {
+        width: 21%;
+        align-content: center;
+        height: 8%;
+        margin-left: 3%;
+        margin-right: 3%;
+        object-fit: contain;
+    }
+
+    .scroll-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 320px;
+    }
+    .Title {
+        width: 100%;
+    }
+    .Title h2 {
+        margin-left:-5%;
+        font-weight: bolder;
+        font-size: 13px;
+    }
+
+    /* Vista Edificios */
+    .ListaElementos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-right:11%;
+        width: 80%;
+        justify-self: center;
+    }
+    .elementos {
+        margin-bottom: 10px;
+    }
+
+        .elementos img {
+            width: 35px;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+
+    .Lista-Container {
+        background-color: #fff;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*Vista Detalles */
+    .ImgElemento {
+        width: 90%;
+        height: 440px;
+        max-height: 480px;
+        /* position: fixed; */
+        top: 120px;
+        margin-left: 1%;
+        border-radius: 8px;
+    }
+    
+    .Info {
+        background-color: #296EB4;
+        color: white;
+        height: 100px;
+        position: fixed;
+        width: 90%;
+        justify-items: center;
+        align-content: center;
+        bottom: 70px;
+        max-height: 110px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 1%;
+    }
+    .floating-button2 {
+        position: fixed;
+        top: 8%;
+        left: 6px;
+        /* background: rgba(255, 255, 255, 1); */
+        z-index: 2;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-button2:hover {
+            cursor: pointer;
+        }
+
+        .floating-button2 img {
+            width: 30px;
+            height: 30px;
+        }
+
+
+
+        .Info p {
+            font-size: small;
+            padding: 5px;
+            text-align: center;
+        }
+    /* Vista ayuda */
+    .Lista-Container2 {
+        padding-top: 5%;
+        width: 100%;
+    }
+ 
+        .Lista-Container2 h3 {
+            margin-left: 10%;
+            font-size: 20px;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+        }
+
+    .informacion {
+        padding-top: 3%;
+        width: 100%;
+        margin-left: 10%;
+        font-size: 12px;
+    }
+
+        .informacion h4 {
+            padding-top: 20px;
+            font-size: 16px;
+            width: 100%;
+            font-family: 'Palatino Linotype', serif;
+            font-weight: normal;
+            margin-left: 2%;
+        }
+
+        .informacion ul {
+            margin-left: 1%;
+            width: 85%;
+        }
+
+        .informacion p {
+            width: 90%;
+            padding-left: 8%;
+        }
+
+    .listaAreas2 {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+    .listaAreas {
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+        .listaAreas li {
+            padding-top: 15px;
+        }
+
+    .imagAyuda {
+        width: 60%;
+        padding-top: 20px;
+        margin-left: 15%;
+    }
+
+    .imagAyuda2 {
+        width: 80%;
+        padding-top: 20px;
+        margin-left: -2%;
+    }
+
+    /* Vista InfoDesarrollador */
+    .Container {
+        /* margin-top: 10%; */
+        height: 100%;
+        margin: auto;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+        .Container h3 {
+            color: black;
+            margin-bottom: 5%;
+        }
+
+    .imagLogo {
+        max-width: 180px;
+        width: 100%;
+    }
+
+    .Desarrolladores {
+        text-align: left;
+        width: 100%;
+        padding-left: 15%;
+        padding-right: 3%;
+        color: black;
+        margin-bottom: 20px;
+    }
+
+        .Desarrolladores li {
+            font-size: 16px;
+            padding-top: 2px;
+        }
+
+    /* Generar Ruta */
+    .ImgMapa {
+        position: absolute;
+        width:10%;
+        /*height: 100%;*/
+        overflow: hidden;
+        margin: 0;
+    }
+
+
+    .ImgRuta {
+        position: fixed;
+        top: 2%;
+        left: 10%;
+        width: 80%;
+        height: 130%;
+        object-fit: contain;
+        z-index: 0;
+    }
+
+    .SeleccionarRuta2 {
+        position: fixed;
+        justify-items: center;
+        background: rgba(255, 255, 255, 255);
+        z-index: 2;
+        left: 1%;
+        top: 60%;
+        width: 100%;
+    }
+
+        .SeleccionarRuta2 p {
+            margin-top: 2px;
+            padding: 0;
+            color: black;
+            text-align: left;
+            justify-self: left;
+            font-size: 14px;
+            margin-left: 20%;
+            margin-bottom: 5px;
+        }
+
+    .ruta {
+        width: 230px;
+        max-width: 300px;
+        margin-bottom: 4px;
+        border-radius: 8px;
+        border: none;
+        background-color: #D9D9D9;
+        text-align: center;
+        font-size: 13px;
+        height: 25px;
+    }
+
+
+    .GenerarRuta {
+        position: fixed;
+        top: 68%;
+        margin-left: -1%;
+        font-size: 14px;
+        background-color: #296EB4;
+        border-radius: 6px;
+        height: 35px;
+        padding: 10px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .MapaCompleto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .MapaCompleto-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mapCompleto {
+        align-self: center;
+        object-fit: contain;
+        width: 200%;
+        margin-left:-50%;
+        margin-top: 58%;
+        transform: rotate(90deg);
+    }
+
+    .floating-buttonReturn {
+        position: fixed;
+        top: 30px;
+        left: 10px;
+        background: rgba(255, 255, 255, 1);
+        z-index: 2;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+        .floating-buttonReturn img {
+            width: 25px;
+            height: 25px;
+        }
+
+    /* Navegación inferior */
+    nav {
+        background-color: #D9D9D9;
+        display: flex;
+        position: fixed;
+        justify-content: space-around;
+        bottom: 0;
+        height: auto;
+        align-items: center;
+    }
+
+}

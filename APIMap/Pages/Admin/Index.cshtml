@@ -1,0 +1,126 @@
+﻿@page
+@model UbicaTec.Pages.Admin.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Css/StylesAdmin.css" />
+    <title>Index Admin</title>
+</head>
+<body class="grid-container">
+	<header class="header">
+		<div class="iconTitle">
+			<a><img class="icon" src="~/Images/Diseños/Logo.png" alt="icon" /></a>
+			<h1>Ubica-Tec</h1>
+		</div>
+		<a id="index"><img class="iconMenu" src="~/Images/Diseños/CerrarSesion.png" alt="filter icon" /></a>
+	</header>
+	<article class="navbar">
+		<div class="search2">
+			<img class="busquedaIcon" src="~/Images/Diseños/busqueda.png" alt="search icon" />
+			<input class="searchtext" type="search" placeholder="Buscar..." />
+		</div>
+	</article>
+
+	<main class="main">
+		<div class="Lista-Container">
+			<div class="ElementosCategorias">
+				<a class="categoria" id="Edificios">
+					<img src="~/Images/Diseños/Edificio.png" />
+					<p>Edificios</p>
+				</a>
+				<a  class="categoria" id="Areas">
+					<img src="~/Images/Diseños/Areas.png" />
+					<p>Áreas</p>
+				</a>
+				<a class="categoria" id="Laboratorios">
+					<img src="~/Images/Diseños/matraz.png" />
+					<p>Laboratorios</p>
+				</a>
+				<a class="categoria" id="Salones">
+					<img src="~/Images/Diseños/aula.png" />
+					<p>Salones</p>
+				</a>
+				<a class="categoria" id="Departamentos">
+					<img src="~/Images/Diseños/Departamento.png" />
+					<p>Departamentos</p>
+				</a>
+			</div>
+		</div>
+
+
+
+		<a id="Agregar" class="btnAgregar"><img class="btnAgregar" src="~/Images/Diseños/boton-agregar.png" /></a>
+	</main>
+
+	<nav class="footer">
+		<div class="nav-item">
+			<a id="Inicio">
+				<img src="~/Images/Diseños/casa.png" alt="home icon" />
+				<h3>Inicio</h3>
+			</a>
+		</div>
+	</nav>
+	<script>
+		if ('serviceWorker' in navigator){
+			navigator.serviceWorker.register('/serviceworker.js?v=5');
+		}
+		//NAVEGACION
+		let Home = document.getElementById('Inicio').addEventListener("click", function () {
+			window.location.replace("Index");
+		});
+		let add= document.getElementById('Agregar').addEventListener("click",function(){
+			window.location.replace("Agregar");
+		});
+		// document.querySelectorAll('.categoria').forEach(enlace => {
+		// 	enlace.addEventListener('click', (event) => {
+		// 		event.preventDefault(); 
+		// 		const url = enlace.getAttribute('data-url');
+		// 		window.location.replace(url); 
+		// 	});
+		// });
+		// let mapa=document.getElementById('MapaCompleto').addEventListener("click",function(){
+		// 	window.location.replace("MapaCompleto");
+		// })
+		let Areas= document.getElementById('Areas').addEventListener("click",function(){
+			window.location.replace("Areas");
+		});
+		let Departamentos=document.getElementById('Departamentos').addEventListener("click", function(){
+			window.location.replace("Departamentos");
+		});
+		let Edificios=document.getElementById('Edificios').addEventListener("click",function(){
+			window.location.replace("Edificios");
+		});
+		let Laboratorios=document.getElementById('Laboratorios').addEventListener("click", function(){
+			window.location.replace("Laboratorios");
+		});
+		let Salones=document.getElementById('Salones').addEventListener("click",function(){
+			window.location.replace("Salones");
+		});
+		let index= document.getElementById('index').addEventListener("click",function(){
+			window.location.replace("/Index");
+		});
+		//MENU DERECHO
+		// let Areas = document.querySelector("#Areas").addEventListener("click", function(){
+		// 	window.location.replace("Areas");
+		// });
+		// let edificios = document.querySelector("#Edificios").addEventListener("click", function(){
+		// 	window.location.replace("/Edificios");
+		// });
+		// let Salones = document.querySelector("#Salones").addEventListener("click", function(){
+		// 	window.location.replace("/Salones");
+		// });
+		// let Laboratorios = document.querySelector("#Laboratorios").addEventListener("click", function(){
+		// 	window.location.replace("/Laboratorios");
+		// });
+		// let Departamentos = document.querySelector("#Departamentos").addEventListener("click", function(){
+		// 	window.location.replace("/Departamentos");
+		// });
+	</script>
+	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+</body>
+</html>		

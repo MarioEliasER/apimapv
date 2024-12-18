@@ -1,0 +1,28 @@
+﻿@page
+@model UbicaTec.Pages.MapaCompletoModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="~/Images/Icono/Icono144.png" type="image/x-icon">
+	<link href="~/Css/Styles.css" rel="stylesheet" />
+	<title>Ubica-Tec</title>
+</head>
+<body class="MapaCompleto">
+
+	<main class="MapaCompleto-Container">
+		<a id="Inicio" class="floating-buttonReturn"><img src="~/Images/Diseños/flecha-izquierda.png" /></a>
+		
+			<img class="mapCompleto" src="~/Images/Diseños/MapaV3.svg" alt="map" />
+
+	</main>
+	<script>
+		let Home = document.querySelector("#Inicio").addEventListener("click", function () {
+			window.location.replace("/Index");
+		});
+	</script>
+</body>
+</html>
